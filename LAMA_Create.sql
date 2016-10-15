@@ -234,7 +234,7 @@ CHARACTER SET utf8 COLLATE utf8_unicode_ci;
 # Alter
 
 ALTER TABLE Equipes
-ADD CONSTRAINT Comptes_nom_idTournoi_UK
+ADD CONSTRAINT Equipes_nom_idTournoi_UK
 UNIQUE (idTournoi, nom);
 
 
