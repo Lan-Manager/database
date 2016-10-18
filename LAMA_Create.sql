@@ -105,8 +105,7 @@ CHARACTER SET utf8 COLLATE utf8_unicode_ci;
 
 CREATE TABLE IF NOT EXISTS Locaux
 ( idLocal INT PRIMARY KEY AUTO_INCREMENT
-, numero VARCHAR(3) NOT NULL
-, aile VARCHAR(1) NOT NULL
+, numero VARCHAR(4) NOT NULL
 )
 CHARACTER SET utf8 COLLATE utf8_unicode_ci;
 
@@ -293,8 +292,8 @@ FOREIGN KEY (idParticipant) REFERENCES Participants(idParticipant);
 
 
 ALTER TABLE Locaux
-ADD CONSTRAINT Locaux_numero_aile_UK
-UNIQUE (numero, aile);
+ADD CONSTRAINT Locaux_numero_UK
+UNIQUE (numero);
 
 
 

@@ -30,57 +30,57 @@ VALUES
 ('Problème');
 
 INSERT INTO Locaux
-(aile, numero)
+(numero)
 VALUES
-('D', '125');
+('D125');
 
 INSERT INTO Locaux
-(aile, numero)
+(numero)
 VALUES
-('D', '109');
+('D108');
 
 INSERT INTO Locaux
-(aile, numero)
+(numero)
 VALUES
-('D', '106');
+('D106');
 
 INSERT INTO Locaux
-(aile, numero)
+(numero)
 VALUES
-('C', '246');
+('C246');
 
 INSERT INTO Postes
 (idLocal, idEtatPoste, numeroPoste)
 VALUES
-( (SELECT idLocal FROM Locaux WHERE aile = 'D' AND numero = '125'), (SELECT idEtatPoste FROM EtatsPostes WHERE nom = 'Non requis'), 1 ),
-( (SELECT idLocal FROM Locaux WHERE aile = 'D' AND numero = '125'), (SELECT idEtatPoste FROM EtatsPostes WHERE nom = 'Non requis'), 2 ),
-( (SELECT idLocal FROM Locaux WHERE aile = 'D' AND numero = '125'), (SELECT idEtatPoste FROM EtatsPostes WHERE nom = 'Non requis'), 3 ),
-( (SELECT idLocal FROM Locaux WHERE aile = 'D' AND numero = '125'), (SELECT idEtatPoste FROM EtatsPostes WHERE nom = 'Non requis'), 4 ),
-( (SELECT idLocal FROM Locaux WHERE aile = 'D' AND numero = '125'), (SELECT idEtatPoste FROM EtatsPostes WHERE nom = 'Non requis'), 5 ),
-( (SELECT idLocal FROM Locaux WHERE aile = 'D' AND numero = '125'), (SELECT idEtatPoste FROM EtatsPostes WHERE nom = 'Non requis'), 6 ),
-( (SELECT idLocal FROM Locaux WHERE aile = 'D' AND numero = '125'), (SELECT idEtatPoste FROM EtatsPostes WHERE nom = 'Non requis'), 7 ),
-( (SELECT idLocal FROM Locaux WHERE aile = 'D' AND numero = '125'), (SELECT idEtatPoste FROM EtatsPostes WHERE nom = 'Non requis'), 8 ),
-( (SELECT idLocal FROM Locaux WHERE aile = 'D' AND numero = '125'), (SELECT idEtatPoste FROM EtatsPostes WHERE nom = 'Non requis'), 9 ),
-( (SELECT idLocal FROM Locaux WHERE aile = 'D' AND numero = '125'), (SELECT idEtatPoste FROM EtatsPostes WHERE nom = 'Non requis'), 10 ),
-( (SELECT idLocal FROM Locaux WHERE aile = 'D' AND numero = '125'), (SELECT idEtatPoste FROM EtatsPostes WHERE nom = 'Non requis'), 11 ),
-( (SELECT idLocal FROM Locaux WHERE aile = 'D' AND numero = '125'), (SELECT idEtatPoste FROM EtatsPostes WHERE nom = 'Non requis'), 12 ),
-( (SELECT idLocal FROM Locaux WHERE aile = 'D' AND numero = '125'), (SELECT idEtatPoste FROM EtatsPostes WHERE nom = 'Non requis'), 13 ),
-( (SELECT idLocal FROM Locaux WHERE aile = 'D' AND numero = '125'), (SELECT idEtatPoste FROM EtatsPostes WHERE nom = 'Non requis'), 14 ),
-( (SELECT idLocal FROM Locaux WHERE aile = 'D' AND numero = '125'), (SELECT idEtatPoste FROM EtatsPostes WHERE nom = 'Non requis'), 15 ),
-( (SELECT idLocal FROM Locaux WHERE aile = 'D' AND numero = '125'), (SELECT idEtatPoste FROM EtatsPostes WHERE nom = 'Non requis'), 16 ),
-( (SELECT idLocal FROM Locaux WHERE aile = 'D' AND numero = '125'), (SELECT idEtatPoste FROM EtatsPostes WHERE nom = 'Non requis'), 17 ),
-( (SELECT idLocal FROM Locaux WHERE aile = 'D' AND numero = '125'), (SELECT idEtatPoste FROM EtatsPostes WHERE nom = 'Non requis'), 18 ),
-( (SELECT idLocal FROM Locaux WHERE aile = 'D' AND numero = '125'), (SELECT idEtatPoste FROM EtatsPostes WHERE nom = 'Non requis'), 19 ),
-( (SELECT idLocal FROM Locaux WHERE aile = 'D' AND numero = '125'), (SELECT idEtatPoste FROM EtatsPostes WHERE nom = 'Non requis'), 20 ),
-( (SELECT idLocal FROM Locaux WHERE aile = 'D' AND numero = '125'), (SELECT idEtatPoste FROM EtatsPostes WHERE nom = 'Non requis'), 21 ),
-( (SELECT idLocal FROM Locaux WHERE aile = 'D' AND numero = '125'), (SELECT idEtatPoste FROM EtatsPostes WHERE nom = 'Non requis'), 22 ),
-( (SELECT idLocal FROM Locaux WHERE aile = 'D' AND numero = '125'), (SELECT idEtatPoste FROM EtatsPostes WHERE nom = 'Non requis'), 23 ),
-( (SELECT idLocal FROM Locaux WHERE aile = 'D' AND numero = '125'), (SELECT idEtatPoste FROM EtatsPostes WHERE nom = 'Non requis'), 24 ),
-( (SELECT idLocal FROM Locaux WHERE aile = 'D' AND numero = '125'), (SELECT idEtatPoste FROM EtatsPostes WHERE nom = 'Non requis'), 25 ),
-( (SELECT idLocal FROM Locaux WHERE aile = 'D' AND numero = '125'), (SELECT idEtatPoste FROM EtatsPostes WHERE nom = 'Non requis'), 26 ),
-( (SELECT idLocal FROM Locaux WHERE aile = 'D' AND numero = '125'), (SELECT idEtatPoste FROM EtatsPostes WHERE nom = 'Non requis'), 27 ),
-( (SELECT idLocal FROM Locaux WHERE aile = 'D' AND numero = '125'), (SELECT idEtatPoste FROM EtatsPostes WHERE nom = 'Non requis'), 28 ),
-( (SELECT idLocal FROM Locaux WHERE aile = 'D' AND numero = '125'), (SELECT idEtatPoste FROM EtatsPostes WHERE nom = 'Non requis'), 29 );
+( (SELECT idLocal FROM Locaux WHERE numero = 'D125'), (SELECT idEtatPoste FROM EtatsPostes WHERE nom = 'Non requis'), 1 ),
+( (SELECT idLocal FROM Locaux WHERE numero = 'D125'), (SELECT idEtatPoste FROM EtatsPostes WHERE nom = 'Non requis'), 2 ),
+( (SELECT idLocal FROM Locaux WHERE numero = 'D125'), (SELECT idEtatPoste FROM EtatsPostes WHERE nom = 'Non requis'), 3 ),
+( (SELECT idLocal FROM Locaux WHERE numero = 'D125'), (SELECT idEtatPoste FROM EtatsPostes WHERE nom = 'Non requis'), 4 ),
+( (SELECT idLocal FROM Locaux WHERE numero = 'D125'), (SELECT idEtatPoste FROM EtatsPostes WHERE nom = 'Non requis'), 5 ),
+( (SELECT idLocal FROM Locaux WHERE numero = 'D125'), (SELECT idEtatPoste FROM EtatsPostes WHERE nom = 'Non requis'), 6 ),
+( (SELECT idLocal FROM Locaux WHERE numero = 'D125'), (SELECT idEtatPoste FROM EtatsPostes WHERE nom = 'Non requis'), 7 ),
+( (SELECT idLocal FROM Locaux WHERE numero = 'D125'), (SELECT idEtatPoste FROM EtatsPostes WHERE nom = 'Non requis'), 8 ),
+( (SELECT idLocal FROM Locaux WHERE numero = 'D125'), (SELECT idEtatPoste FROM EtatsPostes WHERE nom = 'Non requis'), 9 ),
+( (SELECT idLocal FROM Locaux WHERE numero = 'D125'), (SELECT idEtatPoste FROM EtatsPostes WHERE nom = 'Non requis'), 10 ),
+( (SELECT idLocal FROM Locaux WHERE numero = 'D125'), (SELECT idEtatPoste FROM EtatsPostes WHERE nom = 'Non requis'), 11 ),
+( (SELECT idLocal FROM Locaux WHERE numero = 'D125'), (SELECT idEtatPoste FROM EtatsPostes WHERE nom = 'Non requis'), 12 ),
+( (SELECT idLocal FROM Locaux WHERE numero = 'D125'), (SELECT idEtatPoste FROM EtatsPostes WHERE nom = 'Non requis'), 13 ),
+( (SELECT idLocal FROM Locaux WHERE numero = 'D125'), (SELECT idEtatPoste FROM EtatsPostes WHERE nom = 'Non requis'), 14 ),
+( (SELECT idLocal FROM Locaux WHERE numero = 'D125'), (SELECT idEtatPoste FROM EtatsPostes WHERE nom = 'Non requis'), 15 ),
+( (SELECT idLocal FROM Locaux WHERE numero = 'D125'), (SELECT idEtatPoste FROM EtatsPostes WHERE nom = 'Non requis'), 16 ),
+( (SELECT idLocal FROM Locaux WHERE numero = 'D125'), (SELECT idEtatPoste FROM EtatsPostes WHERE nom = 'Non requis'), 17 ),
+( (SELECT idLocal FROM Locaux WHERE numero = 'D125'), (SELECT idEtatPoste FROM EtatsPostes WHERE nom = 'Non requis'), 18 ),
+( (SELECT idLocal FROM Locaux WHERE numero = 'D125'), (SELECT idEtatPoste FROM EtatsPostes WHERE nom = 'Non requis'), 19 ),
+( (SELECT idLocal FROM Locaux WHERE numero = 'D125'), (SELECT idEtatPoste FROM EtatsPostes WHERE nom = 'Non requis'), 20 ),
+( (SELECT idLocal FROM Locaux WHERE numero = 'D125'), (SELECT idEtatPoste FROM EtatsPostes WHERE nom = 'Non requis'), 21 ),
+( (SELECT idLocal FROM Locaux WHERE numero = 'D125'), (SELECT idEtatPoste FROM EtatsPostes WHERE nom = 'Non requis'), 22 ),
+( (SELECT idLocal FROM Locaux WHERE numero = 'D125'), (SELECT idEtatPoste FROM EtatsPostes WHERE nom = 'Non requis'), 23 ),
+( (SELECT idLocal FROM Locaux WHERE numero = 'D125'), (SELECT idEtatPoste FROM EtatsPostes WHERE nom = 'Non requis'), 24 ),
+( (SELECT idLocal FROM Locaux WHERE numero = 'D125'), (SELECT idEtatPoste FROM EtatsPostes WHERE nom = 'Non requis'), 25 ),
+( (SELECT idLocal FROM Locaux WHERE numero = 'D125'), (SELECT idEtatPoste FROM EtatsPostes WHERE nom = 'Non requis'), 26 ),
+( (SELECT idLocal FROM Locaux WHERE numero = 'D125'), (SELECT idEtatPoste FROM EtatsPostes WHERE nom = 'Non requis'), 27 ),
+( (SELECT idLocal FROM Locaux WHERE numero = 'D125'), (SELECT idEtatPoste FROM EtatsPostes WHERE nom = 'Non requis'), 28 ),
+( (SELECT idLocal FROM Locaux WHERE numero = 'D125'), (SELECT idEtatPoste FROM EtatsPostes WHERE nom = 'Non requis'), 29 );
 
 INSERT INTO Statistiques
 (nom)
