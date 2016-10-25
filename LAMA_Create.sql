@@ -9,6 +9,7 @@ USE `420.5A5.a16_lanman`;
 # BD impossible à drop sans retirer la vérification des contraintes des clées étrangères.
 SET foreign_key_checks = 0;
 
+DROP TABLE IF EXISTS ComptesTournois;
 DROP TABLE IF EXISTS PrixTournois;
 DROP TABLE IF EXISTS Prix;
 DROP TABLE IF EXISTS Messages;
@@ -230,7 +231,27 @@ CREATE TABLE IF NOT EXISTS Tours
 CHARACTER SET utf8 COLLATE utf8_unicode_ci;
 
 
+CREATE TABLE IF NOT EXISTS ComptesTournois
+( idCompteTournoi INT PRIMARY KEY AUTO_INCREMENT
+, idTournoi INT NOT NULL
+, idCompte INT NOT NULL
+, lastUpdated TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+)
+CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+
 # Alter
+
+ALTER TABLE ComptesTournois
+ADD CONSTRAINT ComptesTournois_idTournoi_idCompte_UK
+UNIQUE (idTournoi, idCompte);
+
+ALTER TABLE ComptesTournois
+ADD CONSTRAINT ComptesTournois_Tournois_FK
+FOREIGN KEY (idTournoi) REFERENCES Tournois(idTournoi);
+
+ALTER TABLE ComptesTournois
+ADD CONSTRAINT ComptesTournois_Comptes_FK
+FOREIGN KEY (idCompte) REFERENCES Comptes(idCompte);
 
 ALTER TABLE Equipes
 ADD CONSTRAINT Equipes_nom_idTournoi_UK
