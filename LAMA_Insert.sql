@@ -29,6 +29,16 @@ VALUES
 ('En attente'),
 ('Problème');
 
+INSERT INTO EtatsTournois
+(nom)
+VALUES
+('Créé'),
+('Configuration'),
+('Prêt'),
+('En cours'),
+('Terminé'),
+('Annulé');
+
 INSERT INTO Locaux
 (numero)
 VALUES

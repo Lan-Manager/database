@@ -49,9 +49,9 @@ VALUES
 
 
 INSERT INTO Tournois
-(idJeu, idCompte, nom, minJoueur, maxJoueurParEquipe, minJoueurParEquipe, dateEvenement, description, enCours, dateCreation)
+(idJeu, idCompte, idEtatTournoi, nom, minJoueur, maxJoueurParEquipe, minJoueurParEquipe, dateEvenement, description, enCours, dateCreation)
 VALUES
-(1, 1, 'Tournois LOL hiver 2016', 20, 6, 5, '2016-12-09', 'Tournois de League of Legends Hiver 2016. Prix 25$ chez pizza-max au gagant.', true, NOW());
+(1, 1, (SELECT idEtatTournoi FROM EtatsTournois WHERE nom = 'Créé') , 'Tournois LOL hiver 2016', 20, 6, 5, '2016-12-09', 'Tournois de League of Legends Hiver 2016. Prix 25$ chez pizza-max au gagant.', true, NOW());
 
 
 INSERT INTO Prix

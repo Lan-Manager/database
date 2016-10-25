@@ -9,6 +9,7 @@ USE `420.5A5.a16_lanman`;
 # BD impossible à drop sans retirer la vérification des contraintes des clées étrangères.
 SET foreign_key_checks = 0;
 
+DROP TABLE IF EXISTS EtatsTournois;
 DROP TABLE IF EXISTS ComptesTournois;
 DROP TABLE IF EXISTS PrixTournois;
 DROP TABLE IF EXISTS Prix;
@@ -50,6 +51,15 @@ CREATE TABLE IF NOT EXISTS Comptes
 CHARACTER SET utf8 COLLATE utf8_unicode_ci;
 
 
+CREATE TABLE IF NOT EXISTS ComptesTournois
+( idCompteTournoi INT PRIMARY KEY AUTO_INCREMENT
+, idTournoi INT NOT NULL
+, idCompte INT NOT NULL
+, lastUpdated TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+)
+CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+
+
 CREATE TABLE IF NOT EXISTS Equipes
 ( idEquipe INT PRIMARY KEY AUTO_INCREMENT
 , idTournoi INT NOT NULL
@@ -80,6 +90,13 @@ CHARACTER SET utf8 COLLATE utf8_unicode_ci;
 
 CREATE TABLE IF NOT EXISTS EtatsPostes
 ( idEtatPoste INT PRIMARY KEY AUTO_INCREMENT
+, nom VARCHAR(40) NOT NULL UNIQUE
+)
+CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+
+
+CREATE TABLE IF NOT EXISTS EtatsTournois
+( idEtatTournoi INT PRIMARY KEY AUTO_INCREMENT
 , nom VARCHAR(40) NOT NULL UNIQUE
 )
 CHARACTER SET utf8 COLLATE utf8_unicode_ci;
@@ -192,10 +209,12 @@ CREATE TABLE IF NOT EXISTS StatistiquesJeux
 )CHARACTER SET utf8 COLLATE utf8_unicode_ci;
 
 
+
 CREATE TABLE IF NOT EXISTS Tournois
 ( idTournoi INT PRIMARY KEY AUTO_INCREMENT
 , idJeu INT NOT NULL
 , idCompte INT NOT NULL
+, idEtatTournoi INT NOT NULL
 , idEquipe_gagnante INT
 , nom VARCHAR(60) NOT NULL
 , minJoueur INT NOT NULL DEFAULT 1
@@ -231,13 +250,6 @@ CREATE TABLE IF NOT EXISTS Tours
 CHARACTER SET utf8 COLLATE utf8_unicode_ci;
 
 
-CREATE TABLE IF NOT EXISTS ComptesTournois
-( idCompteTournoi INT PRIMARY KEY AUTO_INCREMENT
-, idTournoi INT NOT NULL
-, idCompte INT NOT NULL
-, lastUpdated TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-)
-CHARACTER SET utf8 COLLATE utf8_unicode_ci;
 
 # Alter
 
@@ -427,6 +439,10 @@ FOREIGN KEY (idCompte) REFERENCES Comptes(idCompte);
 ALTER TABLE Tournois
 ADD CONSTRAINT Tournois_EquipesGagnante_FK
 FOREIGN KEY (idEquipe_gagnante) REFERENCES Equipes(idEquipe);
+
+ALTER TABLE Tournois
+ADD CONSTRAINT Tournois_EtatsTournois_FK
+FOREIGN KEY (idEtatTournoi) REFERENCES EtatsTournois(idEtatTournoi);
 
 
 ALTER TABLE Tournois
