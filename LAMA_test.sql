@@ -54,6 +54,21 @@ VALUES
 (1, 1, 'Tournois LOL hiver 2016', 20, 6, 5, '2016-12-09', 'Tournois de League of Legends Hiver 2016. Prix 25$ chez pizza-max au gagant.', true, NOW());
 
 
+INSERT INTO Prix
+(nom)
+VALUES
+('25$ chez PizzaMax'),
+('Une tappe dans le dos'),
+('Un déjeuner gratuit chez Cora');
+
+INSERT INTO PrixTournois
+(idPrix, idTournoi)
+VALUES
+(1,1),
+(2,1),
+(3,1);
+
+
 INSERT INTO Equipes
 (idTournoi, nom, dateEnregistrement)
 VALUES
