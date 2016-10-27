@@ -60,6 +60,12 @@ VALUES
 ('1', '1', '3'),
 ('1', '2', '5');
 
+INSERT INTO ComptesTournois
+(idTournoi, idCompte)
+VALUES
+('1', '4'),
+('1', '5');
+
 INSERT INTO Prix
 (nom)
 VALUES
