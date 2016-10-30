@@ -1,18 +1,28 @@
 USE `420.5A5.a16_lanman`;
 
+
+#			Logins
+#
+# mrCookieMonster	:	1234
+# admin 			:	admin
+# malloc			:	1234
+# maxeber			:	1234
+# antoine			:	1234
+# francis			:	1234
+
 INSERT INTO Comptes
 (nomUtilisateur, motDePasse, courriel, nom, prenom, estAdmin, dateCreation)
 VALUES
-('mrCookieMonster', '1234', 'ivdesjar@cstj.qc.ca', 'Desjardins', 'Ivan', true, NOW()),
-('admin', 'admin', 'admin@lama.com', 'Admin', 'Admin', true, NOW());
+('mrCookieMonster', '1000:+q7wsdeXfAzL74vgJz8ot7J43HZfqzy0:/3My0nGl8JPw3bsjRvTeTwdoBqM=', 'ivdesjar@cstj.qc.ca', 'Desjardins', 'Ivan', true, NOW()),
+('admin', '1000:DbklUIvTte99jOHUtRzwDIKzmC3FArkD:pWZgS7JB2s8XFrjrMeS4BNR7CbA=', 'admin@lama.com', 'Admin', 'Admin', true, NOW());
 
 INSERT INTO Comptes
 (nomUtilisateur, motDePasse, courriel, matricule, nom, prenom, dateCreation)
 VALUES
-('malloc', '1234', '1081849@cstj.qc.ca', '1081849', 'Savaria', 'Tristan', NOW()),
-('maxeber', '1234', 'ivdesjar@cstj.qc.ca', '1241246', 'Ébert', 'Max', NOW()),
-('antoine', '1234', 'ivdesjar@cstj.qc.ca', '3426313', 'Richer-Cloutier', 'Antoine', NOW()),
-('francis', '1234', 'ivdesjar@cstj.qc.ca', '7534126', 'Hamel', 'Francis', NOW());
+('malloc', '1000:+q7wsdeXfAzL74vgJz8ot7J43HZfqzy0:/3My0nGl8JPw3bsjRvTeTwdoBqM=', '1081849@cstj.qc.ca', '1081849', 'Savaria', 'Tristan', NOW()),
+('maxeber', '1000:+q7wsdeXfAzL74vgJz8ot7J43HZfqzy0:/3My0nGl8JPw3bsjRvTeTwdoBqM=', 'ivdesjar@cstj.qc.ca', '1241246', 'Ébert', 'Max', NOW()),
+('antoine', '1000:+q7wsdeXfAzL74vgJz8ot7J43HZfqzy0:/3My0nGl8JPw3bsjRvTeTwdoBqM=', 'ivdesjar@cstj.qc.ca', '3426313', 'Richer-Cloutier', 'Antoine', NOW()),
+('francis', '1000:+q7wsdeXfAzL74vgJz8ot7J43HZfqzy0:/3My0nGl8JPw3bsjRvTeTwdoBqM=', 'ivdesjar@cstj.qc.ca', '7534126', 'Hamel', 'Francis', NOW());
 
 
 INSERT INTO Jeux
