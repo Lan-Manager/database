@@ -233,7 +233,7 @@ CREATE TABLE IF NOT EXISTS TournoisLocaux
 ( idTournoiLocal INT PRIMARY KEY AUTO_INCREMENT
 , idTournoi INT NOT NULL
 , idLocal INT NOT NULL
-, idCompte INT NOT NULL
+, idCompte INT
 )
 CHARACTER SET utf8 COLLATE utf8_unicode_ci;
 
