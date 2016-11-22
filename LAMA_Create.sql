@@ -9,6 +9,7 @@ USE `420.5A5.a16_lanman`;
 # BD impossible à drop sans retirer la vérification des contraintes des clées étrangères.
 SET foreign_key_checks = 0;
 
+DROP PROCEDURE IF EXISTS FIN_TOURNOI;
 DROP TABLE IF EXISTS EtatsTournois;
 DROP TABLE IF EXISTS ComptesTournois;
 DROP TABLE IF EXISTS PrixTournois;
@@ -477,3 +478,34 @@ FOREIGN KEY (idTournoi) REFERENCES Tournois(idTournoi);
 ALTER TABLE Tours
 ADD CONSTRAINT Tours_idTournoi_numTour_UK
 UNIQUE (idTournoi, numTour);
+
+
+DELIMITER //
+CREATE PROCEDURE FIN_TOURNOI()
+	BEGIN
+    SET foreign_key_checks = 0;
+    SET SQL_SAFE_UPDATES = 0;
+	TRUNCATE TABLE ComptesTournois;
+    TRUNCATE TABLE Equipes;
+    TRUNCATE TABLE EquipesParticipants;
+    TRUNCATE TABLE EquipesParties;
+    TRUNCATE TABLE JeuxComptes;
+    TRUNCATE TABLE Messages;
+    TRUNCATE TABLE Participants;
+    TRUNCATE TABLE Parties;
+    TRUNCATE TABLE Prix;
+    TRUNCATE TABLE PrixTournois;
+    TRUNCATE TABLE ScoresEquipesParties;
+    TRUNCATE TABLE Tournois;
+    TRUNCATE TABLE TournoisLocaux;
+    TRUNCATE TABLE Tours;
+
+    Update Postes SET
+		idEtatPoste = (SELECT idEtatPoste FROM EtatsPostes WHERE nom = 'Non requis'),
+        commentaire = null,
+        idCompte = null;
+
+    SET foreign_key_checks = 1;
+    SET SQL_SAFE_UPDATES = 1;
+    END //
+DELIMITER ;
