@@ -525,6 +525,11 @@ CREATE PROCEDURE DELETE_COMPTE(
 		Update Postes SET
 			idCompte = null WHERE idCompte = (SELECT idCompte FROM Comptes WHERE nomUtilisateur = account);
 
+		UPDATE TournoisLocaux SET
+			idCompte = null WHERE idCompte = (SELECT idCompte FROM Comptes WHERE nomUtilisateur = account);
+
+		DELETE FROM ComptesTournois WHERE idCompte = (SELECT idCompte FROM Comptes WHERE nomUtilisateur = account);
+
 		DELETE FROM Comptes WHERE nomUtilisateur = account;
     END IF;
 
