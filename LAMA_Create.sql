@@ -9,7 +9,7 @@ USE `420.5A5.a16_lanman`;
 # BD impossible à drop sans retirer la vérification des contraintes des clées étrangères.
 SET foreign_key_checks = 0;
 
-DROP PROCEDURE IF EXISTS DELETE_Compte;
+DROP PROCEDURE IF EXISTS DELETE_COMPTE;
 DROP PROCEDURE IF EXISTS FIN_TOURNOI;
 DROP TABLE IF EXISTS EtatsTournois;
 DROP TABLE IF EXISTS ComptesTournois;
@@ -510,33 +510,24 @@ CREATE PROCEDURE FIN_TOURNOI()
     SET SQL_SAFE_UPDATES = 1;
     END //
     
-CREATE PROCEDURE DELETE_Compte(
-	IN account VARCHAR(20),
-    OUT status INT
+CREATE PROCEDURE DELETE_COMPTE(
+	IN account VARCHAR(20)
 )
 	BEGIN
     DECLARE accountExists INT DEFAULT 0;
     DECLARE accountTournoi INT DEFAULT 0;
 	SELECT COUNT(*) INTO accountExists FROM Comptes WHERE nomUtilisateur = account;
-    
+
     IF (accountExists > 0) THEN
-		
-        SELECT COUNT(*) INTO accountTournoi FROM Tournois WHERE idCompte = (SELECT idCompte FROM Comptes WHERE nomUtilisateur = account);
-        IF (accountTournoi > 0) THEN
-			SELECT 1;
-        ELSE
-		
-			DELETE FROM Messages WHERE idCompte = (SELECT idCompte FROM Comptes WHERE nomUtilisateur = account);
-    
-			Update Postes SET
-				idCompte = null WHERE idCompte = (SELECT idCompte FROM Comptes WHERE nomUtilisateur = account);
-            
-			DELETE FROM Comptes WHERE nomUtilisateur = account;
-        
-			SELECT 0;
-		END IF;
+
+		DELETE FROM Messages WHERE idCompte = (SELECT idCompte FROM Comptes WHERE nomUtilisateur = account);
+
+		Update Postes SET
+			idCompte = null WHERE idCompte = (SELECT idCompte FROM Comptes WHERE nomUtilisateur = account);
+
+		DELETE FROM Comptes WHERE nomUtilisateur = account;
     END IF;
-    
+
     END//
 DELIMITER ;
 
