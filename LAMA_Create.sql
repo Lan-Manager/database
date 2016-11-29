@@ -308,11 +308,6 @@ ADD CONSTRAINT EquipesParties_idPartie_idEquipe_UK
 UNIQUE (idPartie, idEquipe);
 
 
-ALTER TABLE EquipesParties
-ADD CONSTRAINT EquipesParties_idPartie_estGagnante_UK
-UNIQUE (idPartie, estGagnante);
-
-
 ALTER TABLE JeuxComptes
 ADD CONSTRAINT JeuxComptes_idJeu_nomCompte_UK
 UNIQUE (idJeu, nomCompte);
