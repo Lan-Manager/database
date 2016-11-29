@@ -11,6 +11,7 @@ SET foreign_key_checks = 0;
 
 DROP PROCEDURE IF EXISTS DELETE_COMPTE;
 DROP PROCEDURE IF EXISTS FIN_TOURNOI;
+DROP TABLE IF EXISTS TypesTournois;
 DROP TABLE IF EXISTS EtatsTournois;
 DROP TABLE IF EXISTS ComptesTournois;
 DROP TABLE IF EXISTS PrixTournois;
@@ -216,6 +217,7 @@ CREATE TABLE IF NOT EXISTS StatistiquesJeux
 CREATE TABLE IF NOT EXISTS Tournois
 ( idTournoi INT PRIMARY KEY AUTO_INCREMENT
 , idJeu INT NOT NULL
+, idTypeTournoi INT NOT NULL
 , idCompte INT NOT NULL
 , idEtatTournoi INT NOT NULL
 , idEquipe_gagnante INT
@@ -252,6 +254,12 @@ CREATE TABLE IF NOT EXISTS Tours
 )
 CHARACTER SET utf8 COLLATE utf8_unicode_ci;
 
+
+CREATE TABLE IF NOT EXISTS TypesTournois
+( idTypeTournoi INT PRIMARY KEY AUTO_INCREMENT
+, nom VARCHAR(40)
+)
+CHARACTER SET utf8 COLLATE utf8_unicode_ci;
 
 
 # Alter
@@ -442,6 +450,10 @@ ALTER TABLE Tournois
 ADD CONSTRAINT Tournois_EtatsTournois_FK
 FOREIGN KEY (idEtatTournoi) REFERENCES EtatsTournois(idEtatTournoi);
 
+ALTER TABLE Tournois
+ADD CONSTRAINT Tournois_TypesTournois_FK
+FOREIGN KEY (idTypeTournoi) REFERENCES TypesTournois(idTypeTournoi);
+
 
 ALTER TABLE Tournois
 ADD CONSTRAINT Tournois_enCours_UK
@@ -474,6 +486,11 @@ FOREIGN KEY (idTournoi) REFERENCES Tournois(idTournoi);
 ALTER TABLE Tours
 ADD CONSTRAINT Tours_idTournoi_numTour_UK
 UNIQUE (idTournoi, numTour);
+
+
+ALTER TABLE TypesTournois
+ADD CONSTRAINT TypesTournois_idTypeTournoi_nom_UK
+UNIQUE (nom);
 
 
 DELIMITER //

@@ -30,6 +30,12 @@ INSERT INTO Jeux
 VALUES
 ('League of Legends');
 
+INSERT INTO TypesTournois
+(nom)
+VALUES
+('Simple élimination'),
+('Double élimination');
+
 
 INSERT INTO EtatsPostes
 (nom)
