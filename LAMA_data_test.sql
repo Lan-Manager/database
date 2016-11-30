@@ -66,20 +66,6 @@ VALUES
 ('1', '4'),
 ('1', '5');
 
-INSERT INTO Prix
-(nom)
-VALUES
-('25$ chez PizzaMax'),
-('Une tappe dans le dos'),
-('Un déjeuner gratuit chez Cora');
-
-INSERT INTO PrixTournois
-(idPrix, idTournoi)
-VALUES
-(1,1),
-(2,1),
-(3,1);
-
 
 INSERT INTO Equipes
 (idTournoi, nom, dateEnregistrement)
@@ -93,6 +79,26 @@ VALUES
 (1, 'Team Humongous', NOW()),
 (1, 'Make Memes Great Again', NOW()),
 (1, 'The Tears Collectors', NOW());
+
+INSERT INTO Prix
+(nom)
+VALUES
+('25$ chez PizzaMax'),
+('Un déjeuner gratuit chez Cora');
+
+INSERT INTO Prix
+(nom, idEquipe)
+VALUES
+('Une tappe dans le dos', 1);
+
+
+INSERT INTO PrixTournois
+(idPrix, idTournoi)
+VALUES
+(1,1),
+(2,1),
+(3,1);
+
 
 INSERT INTO EquipesParticipants
 (idEquipe, idParticipant)
