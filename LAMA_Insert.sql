@@ -172,12 +172,12 @@ VALUES
 INSERT INTO Statistiques
 (nom)
 VALUES
-('Kills'),
-('Deaths'),
-('Assists'),
+('Éliminations(s)'),
+('Mort(s)'),
+('Assistance(s)'),
 ('Gold'),
 ('Minions'),
-('Towers'),
+('Batiment(s) détrui(s)'),
 ('Dragons'),
 ('Barons');
 
@@ -185,12 +185,12 @@ VALUES
 INSERT INTO StatistiquesJeux
 (idJeu, idStatistique)
 VALUES
-( (SELECT idJeu FROM Jeux WHERE nom = 'League of Legends'), (SELECT idStatistique FROM Statistiques WHERE nom = 'Kills') ),
-( (SELECT idJeu FROM Jeux WHERE nom = 'League of Legends'), (SELECT idStatistique FROM Statistiques WHERE nom = 'Deaths') ),
-( (SELECT idJeu FROM Jeux WHERE nom = 'League of Legends'), (SELECT idStatistique FROM Statistiques WHERE nom = 'Assists') ),
+( (SELECT idJeu FROM Jeux WHERE nom = 'League of Legends'), (SELECT idStatistique FROM Statistiques WHERE nom = 'Élimination(s)') ),
+( (SELECT idJeu FROM Jeux WHERE nom = 'League of Legends'), (SELECT idStatistique FROM Statistiques WHERE nom = 'Mort(s)') ),
+( (SELECT idJeu FROM Jeux WHERE nom = 'League of Legends'), (SELECT idStatistique FROM Statistiques WHERE nom = 'Assistance(s)') ),
 ( (SELECT idJeu FROM Jeux WHERE nom = 'League of Legends'), (SELECT idStatistique FROM Statistiques WHERE nom = 'Gold') ),
 ( (SELECT idJeu FROM Jeux WHERE nom = 'League of Legends'), (SELECT idStatistique FROM Statistiques WHERE nom = 'Minions') ),
-( (SELECT idJeu FROM Jeux WHERE nom = 'League of Legends'), (SELECT idStatistique FROM Statistiques WHERE nom = 'Towers') ),
+( (SELECT idJeu FROM Jeux WHERE nom = 'League of Legends'), (SELECT idStatistique FROM Statistiques WHERE nom = 'Batiment(s) détrui') ),
 ( (SELECT idJeu FROM Jeux WHERE nom = 'League of Legends'), (SELECT idStatistique FROM Statistiques WHERE nom = 'Dragons') ),
 ( (SELECT idJeu FROM Jeux WHERE nom = 'League of Legends'), (SELECT idStatistique FROM Statistiques WHERE nom = 'Barons') );
 
